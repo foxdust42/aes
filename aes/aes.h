@@ -23,4 +23,11 @@ void ShiftRows(uint8_t state[16]);
 void MixColumns(uint8_t state[16]);
 
 void initSBox(uint8_t sbox[256], uint8_t invsbox[256]);
+
+uint8_t xTimes(uint8_t b);
+
+uint8_t GF2_8_mult(uint8_t a, uint8_t b); 
+
+void PrintBytes(uint8_t b);
+
 #endif

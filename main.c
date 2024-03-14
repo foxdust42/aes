@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
+#include <assert.h>
 
 #include "aes/aes.h"
 
@@ -128,6 +129,18 @@ int main(int argc, char ** argv){
     }
 
     printf("\n");
+
+    uint8_t b1 = 0xAA; //0b10101010
+
+    PrintBytes(b1);
+
+    b1 = xTimes(b1);
+
+    PrintBytes(b1);
+
+    assert(b1 == 0x4F); //0b01001111
+    
+    assert( GF2_8_mult(0x57, 0x13) == 0xfe);
 
     fprintf(stdout, "All is done\n");
     return 0;
